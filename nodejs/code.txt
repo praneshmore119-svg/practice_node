@@ -1,0 +1,26 @@
+  data = req.body//assuming the request body contains the person data
+
+    //create a new person document using the mongoose model
+    const newperson = new person(data);
+
+    //save the newperson to database
+    newperson.save((error,savedperson)=>{
+        if(error){
+            console.log('error saving person:',error);
+            res.status(500).json({error:'internal server error'})//search on google different http status code
+        }else{
+            console.log('data saved successfully');
+            res.status(200).json(savedperson);
+        }
+
+
+it is old method of using callback function in post method
+
+
+//method 1 to store data of person in newperson
+      //newperson.name =data.name;
+      //newperson.age =data.age;
+      //newperson.mobile =data.mobile;
+      //newperson.email =data.email;
+      //newperson.address =data.address;
+})
