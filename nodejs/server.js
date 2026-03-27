@@ -3,7 +3,7 @@ const app = express()// by convention app
 const db =require('./db');//db.js is exported here
 const person =require('./models/person'); 
 const menuitem =require('./models/menuitem');
-require("dotenv").config();
+require('dotenv').config();
 
 const bodyParser =require('body-parser');
 app.use(express.json());
