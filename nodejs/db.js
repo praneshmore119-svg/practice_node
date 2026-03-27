@@ -1,7 +1,9 @@
 //this file is goin to be responsible for connection with database
 const mongoose =require('mongoose')
+require("dotenv").config();
 // define the mongoDB connection URL
-const mongoURL = 'mongodb://localhost:27017/mydb'//replace "mydb" with your database name
+//const mongoURL = 'mongodb://localhost:27017/mydb'//replace "mydb" with your database name (this is local url)
+const mongoURL =process.env.MONGODB_URL;//(this is online url)
 // setup mongodb connection
 mongoose.connect(mongoURL)
 //get the default connection
